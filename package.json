@@ -1,5 +1,5 @@
 {
-  "name": "angular-starter",
+  "name": "ang2-starter-worker",
   "version": "6.0.0",
   "description": "An Angular Webpack Starter kit featuring Angular (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
   "keywords": [
@@ -157,7 +157,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AngularClass/angular-starter.git"
+    "url": "https://github.com/greysta/ang2-starter-worker.git"
   },
   "bugs": {
     "url": "https://github.com/AngularClass/angular-starter/issues"

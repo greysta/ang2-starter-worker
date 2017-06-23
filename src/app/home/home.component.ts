@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit() {
     console.log('hello `Home` component');
-    this.httpService.getData('src/assets/data.json')
+    this.httpService.getData('/assets/data.json')
       .subscribe((data: Response) => this.users = data.json());
     /**
      * this.title.getData().subscribe(data => this.data = data);
