@@ -5,7 +5,15 @@ import {
 
 import { AppState } from '../app.service';
 import { Title } from './title';
-import { XLargeDirective } from './x-large';
+import { Response } from '@angular/http';
+import { HttpService } from '../../assets/http.service';
+
+interface User {
+  id: number;
+  createdAt: number;
+  name: string;
+  imageUrl: string;
+}
 
 @Component({
   /**
@@ -18,7 +26,8 @@ import { XLargeDirective } from './x-large';
    * We need to tell Angular's Dependency Injection which providers are in our app.
    */
   providers: [
-    Title
+    Title,
+    HttpService
   ],
   /**
    * Our list of styles in our component. We may add more to compose many styles together.
@@ -34,16 +43,20 @@ export class HomeComponent implements OnInit {
    * Set our default values
    */
   public localState = { value: '' };
+  public users: User[] = [];
   /**
    * TypeScript public modifiers
    */
   constructor(
     public appState: AppState,
-    public title: Title
+    public title: Title,
+    private httpService: HttpService
   ) {}
 
   public ngOnInit() {
     console.log('hello `Home` component');
+    this.httpService.getData('src/assets/data.json')
+      .subscribe((data: Response) => this.users = data.json());
     /**
      * this.title.getData().subscribe(data => this.data = data);
      */
